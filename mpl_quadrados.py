@@ -15,8 +15,8 @@ def plota_grafico(pontos):
     plt.style.use('dark_background')
     fig, ax = plt.subplots()
     #ax.scatter(2, 5) #Plota um único ponto passando as coodenadas de x e y;
-    ax.scatter(valores_x, valores_y, s=100)
-    ax.plot(valores_x, valores_y, linewidth=3) #Plota o gráfico em linha contínua
+    ax.scatter(valores_x, valores_y, c=valores_y, cmap=plt.cm.Purples, s=10)
+    #ax.plot(valores_x, valores_y, color=(0, 0.8, 0), linewidth=3) #Plota o gráfico em linha contínua
     # Define o título do gráfico e os rótulos dos eixos
     str = f'Função com os {pontos} primeiros quadrados'
     ax.set_title(str, fontsize=18)
@@ -25,8 +25,9 @@ def plota_grafico(pontos):
     # Define o tamano dos rótulos de marcação de escala
     ax.tick_params(labelsize=14)
     ax.axis([0, max(valores_x), 0, max(valores_y)])# Define o intervalo para cada eixo
+    ax.ticklabel_format(style='plain') #Modifica a notação da marcação de escala para notação
     # Exibe o gráfico na tela
     plt.show()
 
 
-plota_grafico(10)
+plota_grafico(100)
