@@ -8,6 +8,14 @@ class CaminhoRandomico:
         # Todos os passeios començam em (0,0)
         self.valores_x = [0]
         self.valores_y = [0]
+
+    
+    def get_passo(self):
+        """ Calcula a direção e a distância do passo """
+        direcao = choice([-1, 1])
+        distancia = choice([0, 1, 2, 3, 4, 5])
+        return direcao * distancia
+
         
 
     def fill_walk(self):
@@ -17,13 +25,8 @@ class CaminhoRandomico:
         while len(self.valores_x) < self.num_pontos:
             
             # Decisão da direção e distância do passo
-            direcao_x = choice([-1, 1])
-            distancia_x = choice([0, 1, 2, 3, 4, 5])
-            passo_x = direcao_x * distancia_x
-
-            direcao_y = choice([-1, 1])
-            distancia_y = choice([0, 1, 2, 3, 4, 5])
-            passo_y = direcao_y * distancia_y
+            passo_x = self.get_passo()
+            passo_y = self.get_passo()
 
             # Ignora passos que não vão a lugar nenhum
             if passo_x == 0 and passo_y == 0:

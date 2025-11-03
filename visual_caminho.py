@@ -4,14 +4,16 @@ from caminho_randomico import CaminhoRandomico
 
 while True:
     # Gera um caminho randômico
+    #cr = CaminhoRandomico(50_000)
     cr = CaminhoRandomico()
     cr.fill_walk()
 
     # Plota os pontos no passeio
     plt.style.use('classic')
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(15,9))
     numero_pontos = range(cr.num_pontos)
-    ax.scatter(cr.valores_x, cr.valores_y, c=numero_pontos, cmap=plt.cm.Blues, edgecolors='none', s=15)
+    #ax.scatter(cr.valores_x, cr.valores_y, c=numero_pontos, cmap=plt.cm.Blues, edgecolors='none', s=1)
+    ax.plot(cr.valores_x, cr.valores_y)
     ax.set_aspect('equal')
 
     # Destaca o primeiro e o ultimo ponto
