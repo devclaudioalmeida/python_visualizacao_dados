@@ -23,6 +23,16 @@ print(f'Numero de repositórios retornados {len(repo_dicts)}')
 
 # Examina o primeiro repositório
 repo_dict = repo_dicts[0]
-print(f'\nChaves: {len(repo_dict)}')
-for key in sorted(repo_dict.keys()):
-    print(key)
+#print(f'\nChaves: {len(repo_dict)}')
+#for key in sorted(repo_dict.keys()):
+#    print(key)
+
+print('\nInformações selecionadas sobre os repositórios')
+for repo_dict in repo_dicts:
+    print(f'\nNome: {repo_dict['name']}')
+    print(f'proprietário: {repo_dict['owner']['login']}')
+    print(f'Estrelas: {repo_dict['stargazers_count']}')
+    print(f'Repositório: {repo_dict['html_url']}')
+    print(f'Criado em: {repo_dict['created_at']}')
+    print(f'Ultima atualização: {repo_dict['updated_at']}')
+    print(f'Descrição: {repo_dict['description']}')
